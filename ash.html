@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Service</title>
+    <!-- Link to your CSS file for styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="C:\Users\urk23cs1201\lab\image\car-rental-service.jpg" alt="car rental">
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">Your Car Rental</a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Fleet</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Rent Your Dream Car Today!</h1>
+                <p>Explore our wide range of vehicles for your next adventure.</p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+        </section>
+
+        <section class="search-vehicles">
+            <div class="container">
+                <h2>Search Available Vehicles</h2>
+                <!-- Car search form goes here -->
+                <form>
+                    <label for="pickup-location">Pick-up Location:</label>
+                    <input type="text" id="pickup-location" name="pickup-location">
+
+                    <label for="pickup-date">Pick-up Date:</label>
+                    <input type="date" id="pickup-date" name="pickup-date">
+
+                    <label for="return-date">Return Date:</label>
+                    <input type="date" id="return-date" name="return-date">
+
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="fleet-vehicles">
+            <div class="container">
+                <h2>Our Fleet</h2>
+                <!-- List of available cars with details and images -->
+                <div class="car-card">
+                    <h3>Compact Car</h3>
+                    <img src="compact-car.jpg" alt="Compact Car">
+                    <p>Perfect for city driving and fuel efficiency.</p>
+                    <a href="#" class="btn btn-secondary">View Details</a>
+                </div>
+
+                <div class="car-card">
+                    <h3>SUV</h3>
+                    <img src="suv.jpg" alt="SUV">
+                    <p>Spacious and comfortable for family trips.</p>
+                    <a href="#" class="btn btn-secondary">View Details</a>
+                </div>
+                <!-- More car listings can be added here -->
+            </div>
+        </section>
+
+        <section class="special-offers">
+            <div class="container">
+                <h2>Special Offers</h2>
+                <!-- Display promotions and discounts -->
+                <p>Get 10% off your first rental!</p>
+            </div>
+        </section>
+
+        <section class="customer-reviews">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <!-- Customer testimonials -->
+                <div class="review">
+                    <p>"Great service and clean cars!" - John Doe</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Car Rental Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
