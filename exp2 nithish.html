@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found Report</title>
+</head>
+<body>
+    <h1>Lost & Found Report Submission</h1>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Report Type</legend>
+            <input type="radio" id="lost" name="report_type" value="lost" required>
+            <label for="lost">Lost Item</label><br>
+            <input type="radio" id="found" name="report_type" value="found">
+            <label for="found">Found Item</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Item Details</legend>
+            <label for="item_name">Item Name:</label><br>
+            <input type="text" id="item_name" name="item_name" required><br><br>
+            <label for="category">Category:</label><br>
+            <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="electronics">Electronics</option>
+                <option value="documents">Documents</option>
+                <option value="clothing">Clothing</option>
+                <option value="accessories">Accessories</option>
+                <option value="jewelry">Jewelry</option>
+                <option value="bags">Bags</option>
+                <option value="keys">Keys</option>
+                <option value="wallets">Wallets/Purses</option>
+                <option value="other">Other</option>
+            </select><br><br>
+            <label for="description">Description (e.g., color, size, brand, unique marks):</label><br>
+            <textarea id="description" name="description" rows="5" cols="40" required></textarea><br><br>
+            <label for="date_event">Date Lost/Found:</label><br>
+            <input type="date" id="date_event" name="date_event" required><br><br>
+            <label for="location_event">Location Lost/Found (be specific):</label><br>
+            <input type="text" id="location_event" name="location_event" required><br><br>
+            <label for="image_upload">Upload Image (Optional):</label><br>
+            <input type="file" id="image_upload" name="image_upload" accept="image/*"><br><br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Your Contact Information</legend>
+            <label for="your_name">Your Name:</label><br>
+            <input type="text" id="your_name" name="your_name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone Number (Optional):</label><br>
+            <input type="tel" id="phone" name="phone"><br><br>
+        </fieldset>
+        <br>
+        <input type="submit" value="Submit Report">
+        <input type="reset" value="Reset Form">
+    </form>
+</body>
+</html>
