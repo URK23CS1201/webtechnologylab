@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #36d1dc, #5b86e5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #5b86e5;
+      box-shadow: 0 0 6px rgba(91,134,229,0.6);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0055aa;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .underweight { color: #ff9800; }
+    .normal { color: #4caf50; }
+    .overweight { color: #ff5722; }
+    .obese { color: #f44336; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>BMI Calculator</h2>
+    <label for="weight">Enter Weight (kg):</label>
+    <input type="number" id="weight" placeholder="e.g. 70">
+
+    <label for="height">Enter Height (cm):</label>
+    <input type="number" id="height" placeholder="e.g. 170">
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+
+    <div id="output" class="result"></div>
+  </div>
+
+  <script>
+    // Function to calculate BMI
+    function calculateBMI() {
+      // Get user inputs
+      var weight = document.getElementById("weight").value;
+      var height = document.getElementById("height").value;
+
+      // Validate inputs
+      if (weight === "" || height === "" || weight <= 0 || height <= 0) {
+        document.getElementById("output").innerHTML = "⚠ Please enter valid values!";
+        document.getElementById("output").className = "result";
+        return;
+      }
+
+      // Convert height from cm to meters
+      height = height / 100;
+
+      // Calculate BMI
+      var bmi = (weight / (height * height)).toFixed(2);
+
+      // Determine status
+      var status = "";
+      var cssClass = "";
+
+      if (bmi < 18) {
+        status = "Underweight";
+        cssClass = "underweight";
+      } else if (bmi >= 18 && bmi < 25) {
+        status = "Normal";
+        cssClass = "normal";
+      } else if (bmi >= 25 && bmi < 30) {
+        status = "Overweight";
+        cssClass = "overweight";
+      } else {
+        status = "Obese";
+        cssClass = "obese";
+      }
+
+      // Display result using DOM manipulation
+      var output = document.getElementById("output");
+      output.innerHTML = `Your BMI is <b>${bmi}</b> <br> Status: <b>${status}</b>`;
+      output.className = "result " + cssClass;
+    }
+  </script>
+</body>
+</html>
